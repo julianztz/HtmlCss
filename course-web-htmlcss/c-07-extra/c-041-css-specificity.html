@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Specificity</title>
+    <style>
+        .example {
+            border: solid tomato 4px;
+        }
+        /* code to focus on */
+        /* if specificities are the same, the last rule applied */
+        
+        p#pid {
+            background-color: cornflowerblue;
+        }
+        /* long path > short path */
+        
+        #container p {
+            background-color: coral;
+        }
+        /* id > class or attribute > tag */
+        
+        #pid {
+            background-color: green;
+        }
+        
+        p:first-child {
+            background-color: red;
+        }
+        
+        .paragraph {
+            background-color: lightblue;
+        }
+        
+        [data-p="data-p-value"] {
+            background-color: navy;
+        }
+        
+        p {
+            background-color: aqua;
+/*            background-color: aqua !important;*/
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Selector specificity</h1>
+    <ol>
+        <li>!important > inline style > ID > Class >  tag</li>
+        <li>long path > short path</li>
+        <li>if specificity is same, the last rule override the privous rules</li>
+        <li>div p == div>p </li>
+    </ol>
+    <hr>
+    <!--    This topic can be more interesting, <a href="http://css-tricks.com/specifics-on-css-specificity/">read more.</a>-->
+    <div class="example">
+        <div id="container">
+            <h4>H3 text</h4>
+            <div>
+                <p id="pid" data-p="data-p-value" class="paragraph"> Paragraph <span>text</span></p>
+            </div>
+        </div>
+    </div>
+    <h3>Note</h3>
+    <ul>
+        <li>Both selectors are using id, the rule "long path" is picked up. #container p > p#pid</li>
+        <li>Write style="background-color: yellow" for #pid, the inline style has more higher prioirty</li>
+        <li>#container p == p#pid</li>
+    </ul>
+    <h3>Summary</h3>
+    <ol>
+        <li>!important > inline style > ID > Pesudo class > Class or Attribute > tag</li>
+        <li>long path > short path</li>
+        <li>if specificity is same, the last rule override the privous rules</li>
+        <li>div p == div>p </li>
+    </ol>
+    <hr>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    /* sizing = content + padding + border */
+    /* box-sizing: content-box; */
+    /* sizing = content (only)*/
+}
+
+.container {
+    width: 600px;
+    height: 200px;
+    background-color: aqua;
+    box-sizing: content-box;
+}
+
+.left {
+    width: 300px;
+    height: 100px;
+    display: inline-block;
+    background-color: blueviolet;
+    border: solid 10px;
+}
+
+.right {
+    width: 300px;
+    height: 100px;
+    display: inline-block;
+    background-color: cadetblue;
+}

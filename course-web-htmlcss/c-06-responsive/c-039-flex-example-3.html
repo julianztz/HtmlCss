@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            font-size: 2em;
+        }
+        
+        .container {
+            border: solid 10px;
+            width: 260px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header,
+        nav,
+        aside,
+        footer {
+            flex: 1;
+        }
+        
+        header {
+            background-color: aqua
+        }
+        
+        nav {
+            background-color: navajowhite;
+        }
+        
+        aside {
+            background-color: coral;
+        }
+        
+        footer {
+            background-color: fuchsia;
+        }
+        
+        article {
+            flex: 8;
+            background-color: chartreuse;
+        }
+        
+        @media all and (min-width: 600px) {
+            header, article, nav, aside, footer {
+                /* padding: 10px;*/
+                /* by adding padding, the flex-basis:0 will not ignore the content in the element */
+                /* that means with padding, setting flex-basis:auto is not necessary */
+            }
+            .container {
+                border: solid 40px rgba(0, 0, 0, 0.5);
+                width: 700px;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            header {
+                flex-basis: 100%;
+            }
+            footer {
+                flex-basis: 100%;
+            }
+            nav,
+            aside {
+                flex-basis: auto;
+                /*                flex-basis: 0;*/
+                flex-grow: 1;
+            }
+            article {
+                flex-basis: auto;
+                /* flex-basis: 0;*/
+                flex-grow: 4;
+                order: 3;
+            }
+            nav {
+                order: 2;
+            }
+            aside {
+                order: 4;
+            }
+            header {
+                order: 1;
+            }
+            footer {
+                order: 5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>header</header>
+        <article>article</article>
+        <nav>nav</nav>
+        <aside>aside</aside>
+        <footer>footer</footer>
+    </div>
+</body>
+
+</html>
