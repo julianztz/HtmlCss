@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flex with margin</title>
+    <style>
+        .container {
+            display: -webkit-flex;
+            display: flex;
+            flex-flow: row wrap;
+            width: 500px;
+            height: 300px;
+            background-color: burlywood;
+            
+/*
+            justify-content: center;
+            align-items: center;
+*/
+            
+        }
+        
+        .flex-item {
+            background-color: aqua;
+            height: 100px;
+            width: 100px;
+        }
+        
+        /* code to focus on */
+        /* or use justify-content and align-items in container */
+        .flex-item {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex-item">flex item 4</div>
+    </div>
+</body>
+
+</html>
